@@ -23,7 +23,6 @@
 import { ref } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
-import { login } from '@/api/login'
 
 const store = useStore()
 const form = ref({
@@ -44,8 +43,10 @@ const formRef = ref(null)
 const handleLogin = () => {
   formRef.value.validate(async (valid) => {
     if (valid) {
-      const res = await login(form.value)
-      console.log(res)
+      /**
+       * 调用store里的登录方法
+       */
+      store.dispatch('login', form.value)
     } else {
       console.log('error submit!')
     }

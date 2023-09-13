@@ -9,10 +9,6 @@ function resolve(dir) {
 }
 const webpack = require('webpack')
 
-module.exports = defineConfig({
-  transpileDependencies: true,
-  lintOnSave:false, //关闭eslint检查
-})
 
 module.exports = {
   configureWebpack: config => {
@@ -82,4 +78,8 @@ module.exports = {
       }
     },
   },
-}
+},
+defineConfig({
+  transpileDependencies: true,
+  lintOnSave:false, //关闭eslint检查
+})

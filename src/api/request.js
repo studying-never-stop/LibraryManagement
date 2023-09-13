@@ -7,8 +7,12 @@ const service = axios.create({
     timeout: 5000,
 })
 
+/**
+ * 请求拦截器
+ */
 service.interceptors.request.use(
     (config) => {
+      console.log(config)
       config.headers.Authorization = localStorage.getItem('token')
       return config
     },
@@ -18,7 +22,6 @@ service.interceptors.request.use(
   )
   
   service.interceptors.response.use((response) => {
-    console.log(response)
     const { code, msg } = response.data
     if ( code === 0 ) {
       return msg
