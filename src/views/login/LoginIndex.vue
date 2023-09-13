@@ -4,9 +4,9 @@
       <div class="title-container">
         <h3 class="title">用户登录</h3>
       </div>
-      <el-form-item prop="username">
+      <el-form-item prop="phonenumber">
         <el-icon :size="20" class="svg-container"><User /></el-icon>
-        <el-input v-model="form.username" />
+        <el-input v-model="form.phone" />
       </el-form-item>
       <el-form-item prop="password">
         <el-icon :size="20" class="svg-container"><Lock /></el-icon>
@@ -27,13 +27,13 @@ import { login } from '@/api/login'
 
 const store = useStore()
 const form = ref({
-  username: 'admin',
-  password: 'admin'
+  phone: '13700001112',
+  password: 'admin2'
 })
 
 const rules = ref({
-  username: [
-    { required: true, message: 'Please input Activity name', trigger: 'blur' }
+  phone: [
+    { required: true, message: 'Please input Activity phone', trigger: 'blur' }
   ],
   password: [
     { required: true, message: 'Please input password', trigger: 'blur' }
@@ -46,7 +46,6 @@ const handleLogin = () => {
     if (valid) {
       const res = await login(form.value)
       console.log(res)
-      // await store.dispatch('/api/login', form.value)
     } else {
       console.log('error submit!')
     }
