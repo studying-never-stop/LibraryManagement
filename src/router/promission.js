@@ -7,7 +7,15 @@ const whiteList = ['/login']
  * 路由守卫，配置允许访问的范围
  */
 router.beforeEach((to, from, next) => {
-    if (store.getters.token){
+    console.log('to', to)
+    console.log('from', from)
+    console.log('next', next)
+    console.log('store', store)
+    console.log('token.getters', store.getters)
+    console.log('token', store.getters.token)
+    if (
+        store.getters.token
+    ){
         if (to.path === '/login'){
             next('/')
         } else {
