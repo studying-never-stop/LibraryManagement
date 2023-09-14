@@ -1,16 +1,13 @@
 export const options = [
   {
+    //与前端要展示的名字一致
     label: 'ID',
-    prop: 'ID'
+    //与后端发来的命名一致
+    prop: 'id'
   },
   {
     label: 'name',
     prop: 'name',
-    width:100
-  },
-  {
-    label: 'password',
-    prop: 'password',
     width:100
   },
   {
@@ -27,6 +24,11 @@ export const options = [
     label: 'role',
     prop: 'role',
     width:100
+  },
+  {
+    label: 'readtimes',
+    prop: 'readtimes',
+    width:100,
   },
   {
     label: 'action',

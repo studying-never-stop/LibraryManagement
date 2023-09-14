@@ -22,7 +22,6 @@ export default {
     login({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
         loginApi(userInfo).then((res) => {
-          console.log(res)
           commit('setToken', res.token)
           router.replace('/')
           resolve()

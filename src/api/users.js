@@ -1,11 +1,14 @@
 import request from './request'
 
-export const getUsers = (params) => {
-  console.log(params)
+export const getUsers = (data) => {
   return request({
-    url: './user/getUser',
+    url: '/user/getUser',
     method: 'POST',
-    params
+    /**
+     * 注意post的时候用'data'传递的数值会以json的形式在body中传输
+     * 而params 一般用于get方法，将内容直接写在url中
+     */
+    data
   })
 }
 
@@ -19,7 +22,7 @@ export const getUsers = (params) => {
 
 export const addUser = (data) => {
   return request({
-    url: './api/auth/regist',
+    url: '/auth/regist',
     method: 'post',
     data
   })
@@ -27,16 +30,15 @@ export const addUser = (data) => {
 
 export const editUser = (data) => {
   return request({
-    url: `./api/users/${data['ID']}`,
+    url: `/user/editUser/${data['id']}`,
     method: 'put',
     data
   })
 }
 
 export const deleteUser = (id) => {
-  console.log(id)
   return request({
-    url: `./api/users/${id}`,
-    method: 'delete'
+    url: `/user/delUser/${id}`,
+    method: 'delete',
   })
 }

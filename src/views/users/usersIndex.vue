@@ -86,9 +86,10 @@ const dialogTableValue = ref({})
 
 const initgetUsersList = async () => {
   const res = await getUsers(queryForm.value)
-  tableData.value = res.users
-  console.log(res)
+  tableData.value = res.data
+  // console.log(res)
   total.value = res.total
+  // console.log(total.value)
 }
 initgetUsersList()
 
@@ -121,7 +122,7 @@ const delUser = (row) => {
     type: 'warning'
   })
     .then(async () => {
-      await deleteUser(row['ID'])
+      await deleteUser(row['id'])
       ElMessage({
         type: 'success',
         message: '删除成功'

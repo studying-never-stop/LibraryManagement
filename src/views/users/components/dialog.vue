@@ -6,8 +6,8 @@
     @close="handleClose"
   >
     <el-form ref="formRef" :model="form" label-width="70px" :rules="rules">
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="form.username" />
+      <el-form-item label="用户名" prop="name">
+        <el-input v-model="form.name" />
       </el-form-item>
       <el-form-item label="密码" prop="password">
         <el-input v-model="form.password" />
@@ -16,7 +16,10 @@
         <el-input v-model="form.email" />
       </el-form-item>
       <el-form-item label="手机" prop="phone">
-        <el-input v-model="form.mobile" />
+        <el-input v-model="form.phone" />
+      </el-form-item>
+      <el-form-item label="身份" prop="role">
+        <el-input v-model="form.role" />
       </el-form-item>
     </el-form>
     <template #footer>
@@ -77,14 +80,15 @@ const handleConfirm = () => {
 const formRef = ref(null)
 
 const form = ref({
-  username: '',
+  name: '',
   password: '',
   email: '',
-  mobile: ''
+  phone: '',
+  role: ''
 })
 
 const rules = ref({
-  username: [
+  name: [
     { required: true, message: 'Please input Activity name', trigger: 'blur' },
     { min: 3, max: 20, message: 'Length should be 3 to 20', trigger: 'blur' }
   ],
@@ -103,7 +107,8 @@ const rules = ref({
   phone: [
     { required: true, message: 'Please input Activity phone', trigger: 'blur' },
     { min: 11, max: 11, message: 'Length should be 11', trigger: 'blur' }
-  ]
+  ],
+  role: []
 })
 
 watch(
