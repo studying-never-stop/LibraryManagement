@@ -1,0 +1,64 @@
+<template>
+  <el-menu
+    active-text-color="#ffd04b"
+    background-color="#304156"
+    class="el-menu-vertical-demo"
+    :default-active="defaultActive"
+    text-color="#fff"
+    @open="handleOpen"
+    @close="handleClose"
+    router
+    unique-opened
+    :collapse="!$store.getters.siderType"
+  >
+    <el-sub-menu :index="item.id" v-for="item in menusList" :key="item.id">
+      <template #title>
+        <!-- 如果使用的是全局定义的elicon -->
+        <el-icon><component :is="iconList[item.icon]"></component></el-icon>
+        <!-- <el-icon><location /></el-icon> -->
+        <span>{{ item.authName }}</span>
+      </template>
+      <el-menu-item
+        :index="'/' + it.path"
+        v-for="it in item.children"
+        :key="it.id"
+        @click="savePath(it.path)"
+        ><el-icon><Menu /></el-icon>{{ it.authName }}</el-menu-item
+      >
+    </el-sub-menu>
+  </el-menu>
+</template>
+
+<script setup>
+import { menuList } from '@/api/menu'
+import { computed, ref } from 'vue'
+import {
+  User,
+  Menu,
+  Setting,
+  Shop,
+  PieChart,
+  Tickets
+} from '@element-plus/icons-vue'
+// import variables from '@/styles/variables.scss'
+
+//如果是全局导入elicon则适用如下语句
+const iconList = ref(['User', 'Setting', 'Shop', 'Tickets', 'PieChart'])
+// const icon = ref('menu')
+
+// 规定初始定向页面
+const defaultActive = ref(sessionStorage.getItem('path') || '/users')
+const menusList = ref([])
+const initmenuList = async () => {
+  menusList.value = await menuList()
+  // const ref = await menuList()
+  console.log(menusList.value)
+}
+initmenuList()
+
+const savePath = (path) => {
+  sessionStorage.setItem('path', `/${path}`)
+}
+</script>
+
+<style lang="scss" scoped></style>

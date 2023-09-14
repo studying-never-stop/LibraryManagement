@@ -12,7 +12,6 @@ const service = axios.create({
  */
 service.interceptors.request.use(
     (config) => {
-      console.log(config)
       config.headers.Authorization = localStorage.getItem('token')
       return config
     },

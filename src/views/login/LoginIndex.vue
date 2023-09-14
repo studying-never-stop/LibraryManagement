@@ -46,7 +46,7 @@ const handleLogin = () => {
       /**
        * 调用store里的登录方法
        */
-      store.dispatch('login', form.value)
+      store.dispatch('app/login', form.value)
     } else {
       console.log('error submit!')
     }

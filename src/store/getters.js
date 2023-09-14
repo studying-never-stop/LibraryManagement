@@ -1,3 +1,4 @@
 export default {
-    token: ( state ) => state.token
+    token: ( state ) => state.app.token,
+    siderType: (state)  => state.app.siderType         
 }
