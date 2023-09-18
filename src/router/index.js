@@ -14,24 +14,9 @@ const routes = [
         component: () => import('@/views/users/usersIndex.vue')
       },
       {
-        path: 'categories',
-        name: 'categories',
-        component: () => import('@/views/categories/index.vue')
-      },
-      {
-        path: 'goods',
-        name: 'goods',
-        component: () => import('@/views/goods/index.vue')
-      },
-      {
-        path: 'orders',
-        name: 'orders',
-        component: () => import('@/views/orders/index.vue')
-      },
-      {
-        path: 'params',
-        name: 'params',
-        component: () => import('@/views/params/index.vue')
+        path: 'books',
+        name: 'books',
+        component: () => import('@/views/books/index.vue')
       },
       {
         path: 'reports',
@@ -39,19 +24,24 @@ const routes = [
         component: () => import('@/views/reports/index.vue')
       },
       {
-        path: 'rights',
-        name: 'rights',
-        component: () => import('@/views/rights/index.vue')
+        path: 'lend',
+        name: 'lend',
+        component: () => import('@/views/orders/lend.vue')
       },
       {
-        path: 'rights2',
-        name: 'rights2',
-        component: () => import('@/views/rights2/index.vue')
+        path: 'return',
+        name: 'return',
+        component: () => import('@/views/orders/return.vue')
       },
       {
-        path: 'rights3',
-        name: 'rights3',
-        component: () => import('@/views/rights3/index.vue')
+        path: 'homepage',
+        name: 'homePage',
+        component: () => import('@/views/homePage/homepage.vue')
+      },
+      {
+        path: 'mySpace',
+        name: 'mySpace',
+        component: () => import('@/views/myspace/index.vue')
       },
     ]
   },

@@ -23,7 +23,8 @@
         v-for="it in item.children"
         :key="it.id"
         @click="savePath(it.path)"
-        ><el-icon><Menu /></el-icon>{{ it.authName }}</el-menu-item
+        ><el-icon><component :is="iconList2[it.icon]" /></el-icon
+        >{{ it.authName }}</el-menu-item
       >
     </el-sub-menu>
   </el-menu>
@@ -36,14 +37,30 @@ import {
   User,
   Menu,
   Setting,
-  Shop,
   PieChart,
-  Tickets
+  Tickets,
+  HomeFilled,
+  UserFilled,
+  Reading,
+  Management,
+  TrendCharts,
+  List,
+  House,
+  Notebook
 } from '@element-plus/icons-vue'
 // import variables from '@/styles/variables.scss'
 
 //如果是全局导入elicon则适用如下语句
-const iconList = ref(['User', 'Setting', 'Shop', 'Tickets', 'PieChart'])
+const iconList = ref(['User', 'Reading', 'PieChart', 'Tickets', 'HomeFilled'])
+const iconList2 = ref([
+  'UserFilled',
+  'Management',
+  'TrendCharts',
+  'List',
+  'Setting',
+  'House',
+  'Notebook'
+])
 // const icon = ref('menu')
 
 // 规定初始定向页面
@@ -52,7 +69,7 @@ const menusList = ref([])
 const initmenuList = async () => {
   menusList.value = await menuList()
   // const ref = await menuList()
-  console.log(menusList.value)
+  // console.log(menusList.value)
 }
 initmenuList()
 

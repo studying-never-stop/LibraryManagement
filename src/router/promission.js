@@ -8,7 +8,7 @@ const whiteList = ['/login']
  */
 router.beforeEach((to, from, next) => {
     if (store.getters.token){
-        console.log(store)
+        // console.log(store)
         if (to.path === '/login'){
             next('/')
         } else {

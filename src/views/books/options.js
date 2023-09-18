@@ -6,29 +6,25 @@ export const options = [
     prop: 'id'
   },
   {
-    label: '姓名',
+    label: '书名',
     prop: 'name',
-    width:100
-  },
-  {
-    label: '电话',
-    prop: 'phone',
-    width:150
-  },
-  {
-    label: '邮箱',
-    prop: 'email',
     width:200
   },
   {
-    label: '角色',
-    prop: 'role',
-    width:100
+    label: '作者',
+    prop: 'writer',
+    width:150
   },
   {
+    label: '是否在库中',
+    prop: 'keep',
+    width:100
+  },
+
+  {
     label: '阅读次数',
-    prop: 'readtimes',
-    width:100,
+    prop: 'bereadtimes',
+    width:150,
   },
   {
     label: '操作',
