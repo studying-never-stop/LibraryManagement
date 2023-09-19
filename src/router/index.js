@@ -24,14 +24,9 @@ const routes = [
         component: () => import('@/views/reports/index.vue')
       },
       {
-        path: 'lend',
-        name: 'lend',
-        component: () => import('@/views/orders/lend.vue')
-      },
-      {
-        path: 'return',
-        name: 'return',
-        component: () => import('@/views/orders/return.vue')
+        path: 'record',
+        name: 'record',
+        component: () => import('@/views/record/record.vue')
       },
       {
         path: 'homepage',

@@ -11,6 +11,20 @@
       </el-form-item>
       <el-form-item label="作者" prop="writer">
         <el-input v-model="form.writer" />
+        <el-form-item label="图书类型"> </el-form-item>
+        <el-select v-model="form.kind">
+          <el-option label="总类" value="Class of classes" />
+          <el-option label="哲学类" value="philosophy" />
+          <el-option label="宗教类" value="religion" />
+          <el-option label="科学类" value="science" />
+          <el-option label="应用科学" value="Applied science" />
+          <el-option label="社会科学" value="Social sciences" />
+          <el-option label="史地" value="Historical land class" />
+          <el-option label="中国史地" value="Historical places in China" />
+          <el-option label="世界史地" value="World-historical site" />
+          <el-option label="语文类" value="Language category" />
+          <el-option label="艺术类" value="arts" />
+        </el-select>
       </el-form-item>
     </el-form>
     <template #footer>
@@ -72,7 +86,8 @@ const formRef = ref(null)
 
 const form = ref({
   name: '',
-  writer: ''
+  writer: '',
+  kind: ''
 })
 
 const rules = ref({
@@ -83,7 +98,8 @@ const rules = ref({
   writer: [
     { required: true, message: 'Please input writer', trigger: 'blur' },
     { min: 1, message: 'Length should be 4 to 20', trigger: 'blur' }
-  ]
+  ],
+  kind: []
 })
 
 watch(
