@@ -14,6 +14,26 @@
       <el-button type="primary" @click="handleDialogValue()"
         >新增书籍</el-button
       >
+      <div class="selecter">
+        <el-select
+          v-model="queryForm.kind"
+          placeholder="Select"
+          style="width: 100px"
+          @change="initgetBooksList"
+        >
+          <el-option label="总类" value="Class of classes" />
+          <el-option label="哲学类" value="philosophy" />
+          <el-option label="宗教类" value="religion" />
+          <el-option label="科学类" value="science" />
+          <el-option label="应用科学" value="Applied science" />
+          <el-option label="社会科学" value="Social sciences" />
+          <el-option label="史地" value="Historical land class" />
+          <el-option label="中国史地" value="Historical places in China" />
+          <el-option label="世界史地" value="World-historical site" />
+          <el-option label="语文类" value="Language category" />
+          <el-option label="艺术类" value="arts" />
+        </el-select>
+      </div>
     </el-row>
     <el-table :data="tableData" stripe style="width: 100%" class="table">
       <el-table-column
@@ -153,5 +173,11 @@ const delBook = (row) => {
   padding-top: 0px;
   box-sizing: border-box;
   text-align: right;
+}
+
+.selecter {
+  padding-left: 10px;
+  box-sizing: border-box;
+  text-align: center;
 }
 </style>

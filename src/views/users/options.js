@@ -18,7 +18,7 @@ export const options = [
   {
     label: '邮箱',
     prop: 'email',
-    width:200
+    width:150
   },
   {
     label: '角色',
@@ -26,8 +26,13 @@ export const options = [
     width:100
   },
   {
-    label: '阅读次数',
-    prop: 'readtimes',
+    label: '买书次数',
+    prop: 'buynumber',
+    width:100,
+  },
+  {
+    label: '借书次数',
+    prop: 'lendnumber',
     width:100,
   },
   {

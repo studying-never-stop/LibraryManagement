@@ -8,7 +8,7 @@ export const options = [
   {
     label: '书名',
     prop: 'name',
-    width:200
+    width:150
   },
   {
     label: '作者',
@@ -16,7 +16,12 @@ export const options = [
     width:150
   },
   {
-    label: '是否在库中',
+    label: '定价',
+    prop: 'cost',
+    width:100
+  },
+  {
+    label: '库存',
     prop: 'keep',
     width:100
   },

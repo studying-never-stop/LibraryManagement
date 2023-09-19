@@ -18,8 +18,12 @@
       <el-form-item label="手机" prop="phone">
         <el-input v-model="form.phone" />
       </el-form-item>
-      <el-form-item label="身份" prop="role">
-        <el-input v-model="form.role" />
+      <el-form-item label="身份">
+        <el-select v-model="form.role" prop="role">
+          <el-option label="管理员" value="admin" />
+          <el-option label="普通用户" value="common" />
+          <el-option label="尊贵用户" value="vip" />
+        </el-select>
       </el-form-item>
     </el-form>
     <template #footer>

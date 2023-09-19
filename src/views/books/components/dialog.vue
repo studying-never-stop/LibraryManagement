@@ -11,7 +11,14 @@
       </el-form-item>
       <el-form-item label="作者" prop="writer">
         <el-input v-model="form.writer" />
-        <el-form-item label="图书类型"> </el-form-item>
+      </el-form-item>
+      <el-form-item label="库存" prop="keep">
+        <el-input v-model="form.keep" />
+      </el-form-item>
+      <el-form-item label="定价" prop="cost">
+        <el-input v-model="form.cost" />
+      </el-form-item>
+      <el-form-item label="图书类型">
         <el-select v-model="form.kind">
           <el-option label="总类" value="Class of classes" />
           <el-option label="哲学类" value="philosophy" />
@@ -87,7 +94,9 @@ const formRef = ref(null)
 const form = ref({
   name: '',
   writer: '',
-  kind: ''
+  kind: '',
+  cost: '',
+  keep: ''
 })
 
 const rules = ref({
@@ -99,7 +108,8 @@ const rules = ref({
     { required: true, message: 'Please input writer', trigger: 'blur' },
     { min: 1, message: 'Length should be 4 to 20', trigger: 'blur' }
   ],
-  kind: []
+  kind: [],
+  cost: []
 })
 
 watch(

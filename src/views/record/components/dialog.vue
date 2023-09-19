@@ -16,6 +16,7 @@
         <el-select v-model="form.acttype">
           <el-option label="借书登记" value="lend" />
           <el-option label="还书登记" value="return" />
+          <el-option label="卖书登记" value="buy" />
         </el-select>
       </el-form-item>
     </el-form>
