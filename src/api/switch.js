@@ -16,3 +16,11 @@ export const getRecord = (data) => {
       data
     })
   }
+
+export const getData = (data) => {
+  return request({
+    url: '/switch/getData',
+    method: 'post',
+    data
+  })
+}

@@ -1,7 +1,10 @@
 <template>
   <div>reports</div>
+  <leftBooks />
 </template>
 
-<script setup></script>
+<script setup>
+import leftBooks from '@/echarts/leftBooks.vue'
+</script>
 
 <style lang="scss" scoped></style>

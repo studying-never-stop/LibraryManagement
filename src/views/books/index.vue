@@ -21,6 +21,7 @@
           style="width: 100px"
           @change="initgetBooksList"
         >
+          <el-option label="全部" value="" />
           <el-option label="总类" value="Class of classes" />
           <el-option label="哲学类" value="philosophy" />
           <el-option label="宗教类" value="religion" />
@@ -92,6 +93,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 
 const queryForm = ref({
   query: '',
+  kind: '',
   pagenum: 1,
   pagesize: 5
 })
