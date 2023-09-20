@@ -1,11 +1,18 @@
 <template>
-  <div id="main" style="height: 200px; width: 200px"></div>
+  <div id="leftBook" style="height: 300px; width: 300px"></div>
 </template>
 
 <script setup>
 import * as echarts from 'echarts'
 import { ref, onMounted } from 'vue'
+import { getData } from '@/api/switch'
 
+let msg = {
+  request: 'leftbook'
+}
+
+let pieData = getData(msg)
+console.log(getData(msg))
 let option = {
   tooltip: {
     trigger: 'item'
@@ -39,19 +46,13 @@ let option = {
       labelLine: {
         show: false
       },
-      data: [
-        { value: 1048, name: 'Search Engine' },
-        { value: 735, name: 'Direct' },
-        { value: 580, name: 'Email' },
-        { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads' }
-      ]
+      data: pieData
     }
   ]
 }
 
 onMounted(() => {
-  let chartDom = document.getElementById('main')
+  let chartDom = document.getElementById('leftBook')
   let myChart = echarts.init(chartDom)
   option && myChart.setOption(option)
 })

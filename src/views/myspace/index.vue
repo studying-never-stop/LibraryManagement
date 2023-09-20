@@ -1,10 +1,7 @@
 <template>
   <div>myspace</div>
-  <leftBooks />
 </template>
 
-<script setup>
-import leftBooks from '@/echarts/leftBooks.vue'
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>

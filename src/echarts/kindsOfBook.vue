@@ -1,5 +1,6 @@
 <template>
-  <div id="main" style="height: 300px; width: 300px"></div>
+  <!-- 如果是组件页面id不能相同,否则会导致加载到同一区域 -->
+  <div id="kind" style="height: 300px; width: 300px"></div>
 </template>
 
 <script setup>
@@ -26,11 +27,23 @@ let option = {
   },
   yAxis: {
     type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    data: [
+      '总类',
+      '哲学',
+      '宗教',
+      '科学',
+      '应用科学',
+      '社会科学',
+      '史地',
+      '中国史地',
+      '世界史地',
+      '语文',
+      '艺术'
+    ]
   },
   series: [
     {
-      name: 'Direct',
+      name: 'keep',
       type: 'bar',
       stack: 'total',
       label: {
@@ -39,10 +52,10 @@ let option = {
       emphasis: {
         focus: 'series'
       },
-      data: [320, 302, 301, 334, 390, 330, 320]
+      data: [32, 30, 30, 10, 20, 30, 40, 50, 40, 30, 10]
     },
     {
-      name: 'Mail Ad',
+      name: 'sell',
       type: 'bar',
       stack: 'total',
       label: {
@@ -51,10 +64,10 @@ let option = {
       emphasis: {
         focus: 'series'
       },
-      data: [120, 132, 101, 134, 90, 230, 210]
+      data: [12, 13, 10, 10, 20, 30, 40, 50, 40, 30, 20]
     },
     {
-      name: 'Affiliate Ad',
+      name: 'lend',
       type: 'bar',
       stack: 'total',
       label: {
@@ -63,37 +76,13 @@ let option = {
       emphasis: {
         focus: 'series'
       },
-      data: [220, 182, 191, 234, 290, 330, 310]
-    },
-    {
-      name: 'Video Ad',
-      type: 'bar',
-      stack: 'total',
-      label: {
-        show: true
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      data: [150, 212, 201, 154, 190, 330, 410]
-    },
-    {
-      name: 'Search Engine',
-      type: 'bar',
-      stack: 'total',
-      label: {
-        show: true
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      data: [820, 832, 901, 934, 1290, 1330, 1320]
+      data: [22, 18, 19, 10, 20, 30, 40, 50, 40, 30, 10]
     }
   ]
 }
 
 onMounted(() => {
-  let chartDom = document.getElementById('main')
+  let chartDom = document.getElementById('kind')
   let myChart = echarts.init(chartDom)
   option && myChart.setOption(option)
 })
