@@ -123,8 +123,6 @@ const handleDialogValue = (row) => {
   }
   dialogVisible.value = true
 }
-
-//@change="initgetRecordsList" change在选择完之后立刻更新页面
 </script>
 
 <style lang="scss" scoped>

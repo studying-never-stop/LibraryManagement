@@ -1,5 +1,5 @@
 <template>
-  <div id="monthchange" style="width: 900px; height: 200px"></div>
+  <div id="monthchange" class="echart"></div>
 </template>
 
 <script setup>
@@ -58,4 +58,9 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.echart {
+  height: 200px;
+  width: 900px;
+}
+</style>

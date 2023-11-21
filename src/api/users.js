@@ -12,14 +12,6 @@ export const getUsers = (data) => {
   })
 }
 
-
-// export const changeUserState = (uid,type) => {
-//   return request({
-//     url: `./api/users/${uid}/state/${type}`,
-//     method:'put'
-//   })
-// }
-
 export const addUser = (data) => {
   return request({
     url: '/auth/regist',

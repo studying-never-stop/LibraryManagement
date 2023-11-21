@@ -6,23 +6,31 @@
     @close="handleClose"
   >
     <el-form ref="formRef" :model="form" label-width="70px" :rules="rules">
-      <el-form-item label="用户名" prop="name">
+      <el-form-item label="书名" prop="name">
         <el-input v-model="form.name" />
       </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input v-model="form.password" />
+      <el-form-item label="作者" prop="writer">
+        <el-input v-model="form.writer" />
       </el-form-item>
-      <el-form-item label="邮箱" prop="email">
-        <el-input v-model="form.email" />
+      <el-form-item label="库存" prop="keep">
+        <el-input v-model="form.keep" />
       </el-form-item>
-      <el-form-item label="手机" prop="phone">
-        <el-input v-model="form.phone" />
+      <el-form-item label="定价" prop="cost">
+        <el-input v-model="form.cost" />
       </el-form-item>
-      <el-form-item label="身份">
-        <el-select v-model="form.role" prop="role">
-          <el-option label="管理员" value="admin" />
-          <el-option label="普通用户" value="common" />
-          <el-option label="尊贵用户" value="vip" />
+      <el-form-item label="图书类型">
+        <el-select v-model="form.kind">
+          <el-option label="总类" value="Class of classes" />
+          <el-option label="哲学类" value="philosophy" />
+          <el-option label="宗教类" value="religion" />
+          <el-option label="科学类" value="science" />
+          <el-option label="应用科学" value="Applied science" />
+          <el-option label="社会科学" value="Social sciences" />
+          <el-option label="史地" value="Historical land class" />
+          <el-option label="中国史地" value="Historical places in China" />
+          <el-option label="世界史地" value="World-historical site" />
+          <el-option label="语文类" value="Language category" />
+          <el-option label="艺术类" value="arts" />
         </el-select>
       </el-form-item>
     </el-form>
@@ -37,7 +45,7 @@
 
 <script setup>
 import { defineEmits, ref, defineProps, watch } from 'vue'
-import { addUser, editUser } from '@/api/users'
+import { addBook, editBook } from '@/api/book'
 import { ElMessage } from 'element-plus'
 
 const props = defineProps({
@@ -52,10 +60,7 @@ const props = defineProps({
   }
 })
 
-// watch不能放在被监视对象的上面
-// watch(() => props.dialogTableValue,() => {form.value=props.dialogTableValue},{ deep: true ,immediate: true} )
-
-const emits = defineEmits(['update:modelValue', 'initUserList'])
+const emits = defineEmits(['update:modelValue', 'initBookList'])
 
 const handleClose = () => {
   emits('update:modelValue', false)
@@ -65,14 +70,14 @@ const handleConfirm = () => {
   // 统一效验
   formRef.value.validate(async (valid) => {
     if (valid) {
-      props.dialogTitle === '添加用户'
-        ? await addUser(form.value)
-        : await editUser(form.value)
+      props.dialogTitle === '添加书籍'
+        ? await addBook(form.value)
+        : await editBook(form.value)
       ElMessage({
         message: '更新成功',
         type: 'success'
       })
-      emits('initUserList')
+      emits('initBookList')
       handleClose()
     } else {
       console.log('error submit!')
@@ -85,34 +90,23 @@ const formRef = ref(null)
 
 const form = ref({
   name: '',
-  password: '',
-  email: '',
-  phone: '',
-  role: ''
+  writer: '',
+  kind: '',
+  cost: '',
+  keep: ''
 })
 
 const rules = ref({
   name: [
     { required: true, message: 'Please input Activity name', trigger: 'blur' },
-    { min: 3, max: 20, message: 'Length should be 3 to 20', trigger: 'blur' }
+    { min: 1, message: 'Length should be 3 to 20', trigger: 'blur' }
   ],
-  password: [
-    { required: true, message: 'Please input password', trigger: 'blur' },
-    { min: 4, max: 20, message: 'Length should be 4 to 20', trigger: 'blur' }
+  writer: [
+    { required: true, message: 'Please input writer', trigger: 'blur' },
+    { min: 1, message: 'Length should be 4 to 20', trigger: 'blur' }
   ],
-  email: [
-    { required: true, message: 'Please input Activity name', trigger: 'blur' },
-    {
-      type: 'email',
-      message: 'Please input correct email address',
-      trigger: ['blur', 'change']
-    }
-  ],
-  phone: [
-    { required: true, message: 'Please input Activity phone', trigger: 'blur' },
-    { min: 11, max: 11, message: 'Length should be 11', trigger: 'blur' }
-  ],
-  role: []
+  kind: [],
+  cost: []
 })
 
 watch(

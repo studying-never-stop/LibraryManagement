@@ -48,7 +48,6 @@ import {
   House,
   Notebook
 } from '@element-plus/icons-vue'
-// import variables from '@/styles/variables.scss'
 
 //如果是全局导入elicon则适用如下语句
 const iconList = ref(['User', 'Reading', 'PieChart', 'Tickets', 'HomeFilled'])

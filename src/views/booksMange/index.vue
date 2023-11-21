@@ -109,9 +109,7 @@ const dialogTableValue = ref({})
 const initgetBooksList = async () => {
   const res = await getBook(queryForm.value)
   tableData.value = res.data
-  // console.log(res)
   total.value = res.total
-  // console.log(total.value)
 }
 initgetBooksList()
 

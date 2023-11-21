@@ -87,9 +87,7 @@ const dialogTableValue = ref({})
 const initgetUsersList = async () => {
   const res = await getUsers(queryForm.value)
   tableData.value = res.data
-  // console.log(res)
   total.value = res.total
-  // console.log(total.value)
 }
 initgetUsersList()
 

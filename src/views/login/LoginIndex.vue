@@ -43,9 +43,6 @@ const formRef = ref(null)
 const handleLogin = () => {
   formRef.value.validate(async (valid) => {
     if (valid) {
-      /**
-       * 调用store里的登录方法
-       */
       store.dispatch('app/login', form.value)
     } else {
       console.log('error submit!')
@@ -74,14 +71,14 @@ $cursor: #fff;
     margin: 0 auto;
     overflow: hidden;
 
-    ::v-deep .el-form-item {
+    .el-form-item {
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
       color: #454545;
     }
 
-    ::v-deep .el-input {
+    .el-input {
       display: inline-block;
       height: 47px;
       width: 85%;
@@ -141,7 +138,7 @@ $cursor: #fff;
       font-weight: bold;
     }
 
-    ::v-deep .lang-select {
+    .lang-select {
       position: absolute;
       top: 4px;
       right: 0;

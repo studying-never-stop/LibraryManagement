@@ -1,6 +1,5 @@
 <template>
-  <!-- 如果是组件页面id不能相同,否则会导致加载到同一区域 -->
-  <div id="kind" style="height: 300px; width: 300px"></div>
+  <div id="usermakeup" class="echart"></div>
 </template>
 
 <script setup>
@@ -8,11 +7,11 @@ import * as echarts from 'echarts'
 import { ref, onMounted } from 'vue'
 
 let option = {
+  //这是添加辅助说明的工具
   tooltip: {
     trigger: 'axis',
     axisPointer: {
-      // Use axis to trigger tooltip
-      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+      type: 'shadow'
     }
   },
   legend: {},
@@ -23,27 +22,15 @@ let option = {
     containLabel: true
   },
   xAxis: {
-    type: 'value'
+    type: 'category',
+    data: ['common', 'vip']
   },
   yAxis: {
-    type: 'category',
-    data: [
-      '总类',
-      '哲学',
-      '宗教',
-      '科学',
-      '应用科学',
-      '社会科学',
-      '史地',
-      '中国史地',
-      '世界史地',
-      '语文',
-      '艺术'
-    ]
+    type: 'value'
   },
   series: [
     {
-      name: 'keep',
+      name: 'Q1',
       type: 'bar',
       stack: 'total',
       label: {
@@ -52,10 +39,10 @@ let option = {
       emphasis: {
         focus: 'series'
       },
-      data: [32, 30, 30, 10, 20, 30, 40, 50, 40, 30, 10]
+      data: [320, 302]
     },
     {
-      name: 'sell',
+      name: 'Q2',
       type: 'bar',
       stack: 'total',
       label: {
@@ -64,10 +51,10 @@ let option = {
       emphasis: {
         focus: 'series'
       },
-      data: [12, 13, 10, 10, 20, 30, 40, 50, 40, 30, 20]
+      data: [120, 132]
     },
     {
-      name: 'lend',
+      name: 'Q3',
       type: 'bar',
       stack: 'total',
       label: {
@@ -76,16 +63,33 @@ let option = {
       emphasis: {
         focus: 'series'
       },
-      data: [22, 18, 19, 10, 20, 30, 40, 50, 40, 30, 10]
+      data: [220, 182]
+    },
+    {
+      name: 'Q4',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [150, 212]
     }
   ]
 }
 
 onMounted(() => {
-  let chartDom = document.getElementById('kind')
+  let chartDom = document.getElementById('usermakeup')
   let myChart = echarts.init(chartDom)
   option && myChart.setOption(option)
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.echart {
+  height: 300px;
+  width: 300px;
+}
+</style>

@@ -46,9 +46,6 @@ const props = defineProps({
   }
 })
 
-// watch不能放在被监视对象的上面
-// watch(() => props.dialogTableValue,() => {form.value=props.dialogTableValue},{ deep: true ,immediate: true} )
-
 const emits = defineEmits(['update:modelValue', 'initRecordList'])
 
 const handleClose = () => {

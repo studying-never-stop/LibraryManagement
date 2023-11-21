@@ -33,7 +33,6 @@ const handleRedirect = (path) => {
   router.push(path)
 }
 
-//监听操作：监听route，要干什么，需要深入和立刻开始监听(注意其他操作都要写在监听上面)
 watch(
   route,
   () => {

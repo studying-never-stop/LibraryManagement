@@ -4,7 +4,10 @@
       <el-aside :width="asidewith" class="sidebar-container">
         <MenuIndex />
       </el-aside>
-      <el-container class="container" :class="{hidderContainer: !$store.getters.siderType}">
+      <el-container
+        class="container"
+        :class="{ hidderContainer: !$store.getters.siderType }"
+      >
         <el-header><headerIndex /></el-header>
         <el-main><router-view /></el-main>
       </el-container>
@@ -17,10 +20,10 @@ import MenuIndex from './Menu/MenuIndex'
 import headerIndex from './header/headIndex'
 import usersIndex from '../views/users/usersIndex'
 import { computed } from 'vue'
-import { useStore} from 'vuex'
+import { useStore } from 'vuex'
 
 const store = useStore()
-const asidewith = computed(() =>{
+const asidewith = computed(() => {
   return store.getters.siderType ? '210px' : '67px'
 })
 </script>
@@ -44,7 +47,8 @@ const asidewith = computed(() =>{
     width: calc(100% - $hideSideBarWidth);
   }
 }
-::v-deep .el-header {
+.el-header {
   padding: 0;
 }
 </style>
+../views/usersMange/usersIndex

@@ -1,6 +1,5 @@
 <template>
   <div class="hamburger-container" @click="toggleClick">
-    <!-- 自己设计的图标的导入 -->
     <svg-icon :icon="icon"></svg-icon>
   </div>
 </template>

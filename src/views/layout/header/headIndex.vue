@@ -10,7 +10,6 @@
 import Hamburger from './components/hamburger.vue'
 import breadcrumb from './components/breadcrumb.vue'
 import Avatar from './components/avatar.vue'
-
 </script>
 
 <style lang="scss" scoped>
@@ -30,7 +29,7 @@ import Avatar from './components/avatar.vue'
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    ::v-deep .navbar-item {
+    .navbar-item {
       display: inline-block;
       margin-left: 18px;
       font-size: 22px;

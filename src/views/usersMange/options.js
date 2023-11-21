@@ -1,8 +1,6 @@
 export const options = [
   {
-    //与前端要展示的名字一致
     label: 'ID',
-    //与后端发来的命名一致
     prop: 'id'
   },
   {

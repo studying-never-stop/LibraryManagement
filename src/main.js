@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import '@/styles/index.scss'
 import'@/router/promission'
-import SvgIcon from '@/icons'
+import SvgIcon from '@/components/icons'
 import * as Elicon from '@element-plus/icons-vue'
 
 const app = createApp(App)
