@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import homePage from '../views/homePage/homepage.vue'
 
 const routes = [
   {
@@ -11,12 +10,12 @@ const routes = [
       {
         path: 'users',
         name: 'users',
-        component: () => import('@/views/users/usersIndex.vue')
+        component: () => import('@/views/usersMange/usersIndex.vue')
       },
       {
         path: 'books',
         name: 'books',
-        component: () => import('@/views/books/index.vue')
+        component: () => import('@/views/booksMange/index.vue')
       },
       {
         path: 'reports',
@@ -27,11 +26,6 @@ const routes = [
         path: 'record',
         name: 'record',
         component: () => import('@/views/record/record.vue')
-      },
-      {
-        path: 'homepage',
-        name: 'homePage',
-        component: () => import('@/views/homePage/homepage.vue')
       },
       {
         path: 'mySpace',

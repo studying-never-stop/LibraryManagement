@@ -18,7 +18,7 @@
 <script setup>
 import MenuIndex from './Menu/MenuIndex'
 import headerIndex from './header/headIndex'
-import usersIndex from '../views/users/usersIndex'
+import usersIndex from '../views/usersMange/usersIndex'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 
