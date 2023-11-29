@@ -12,6 +12,9 @@
       <el-form-item label="作者" prop="writer">
         <el-input v-model="form.writer" />
       </el-form-item>
+      <el-form-item label="出版社" prop="publisher">
+        <el-input v-model="form.publisher" />
+      </el-form-item>
       <el-form-item label="库存" prop="keep">
         <el-input v-model="form.keep" />
       </el-form-item>
@@ -91,6 +94,7 @@ const formRef = ref(null)
 const form = ref({
   name: '',
   writer: '',
+  publisher: '',
   kind: '',
   cost: '',
   keep: ''
@@ -98,12 +102,15 @@ const form = ref({
 
 const rules = ref({
   name: [
-    { required: true, message: 'Please input Activity name', trigger: 'blur' },
+    { required: true, message: 'Please input name', trigger: 'blur' },
     { min: 1, message: 'Length should be 3 to 20', trigger: 'blur' }
   ],
   writer: [
     { required: true, message: 'Please input writer', trigger: 'blur' },
     { min: 1, message: 'Length should be 4 to 20', trigger: 'blur' }
+  ],
+  publisher: [
+    { required: true, message: 'Please input publisher', trigger: 'blur' }
   ],
   kind: [],
   cost: []

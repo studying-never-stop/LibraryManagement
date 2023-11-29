@@ -3,7 +3,7 @@
     <el-row :gutter="20" class="header">
       <el-col :span="7">
         <el-input
-          :placeholder="'请输入要查找的书名或作者名'"
+          :placeholder="'请输入要查找的书名、作者名或出版社'"
           clearable
           v-model="queryForm.query"
         ></el-input>

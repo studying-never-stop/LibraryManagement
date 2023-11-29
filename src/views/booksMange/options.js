@@ -16,6 +16,11 @@ export const options = [
     width:150
   },
   {
+    label: '出版社',
+    prop: 'publisher',
+    width:150
+  },
+  {
     label: '定价',
     prop: 'cost',
     width:100
@@ -23,13 +28,12 @@ export const options = [
   {
     label: '库存',
     prop: 'keep',
-    width:100
+    width:50
   },
-
   {
     label: '阅读次数',
     prop: 'bereadtimes',
-    width:150,
+    width:50,
   },
   {
     label: '操作',
