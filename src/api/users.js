@@ -34,3 +34,11 @@ export const deleteUser = (id) => {
     method: 'delete',
   })
 }
+
+export const getUserData = (data) => {
+  return request({
+    url: '/user/getUserData',
+    method: 'POST',
+    data
+  })
+}
